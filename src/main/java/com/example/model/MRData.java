@@ -12,6 +12,7 @@ public class MRData {
     private String series;
     private String url;
     private String limit;
+    private String offset;
     private String total;
-    private StandingsTable standingsTable;
+    private StandingsTable StandingsTable;
 }

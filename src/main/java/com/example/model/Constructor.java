@@ -7,10 +7,10 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Constructors {
-
+public class Constructor {
     private String constructorId;
     private String url;
     private String name;
     private String nationality;
+
 }

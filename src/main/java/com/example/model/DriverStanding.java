@@ -4,16 +4,18 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class DriverStandings {
+public class DriverStanding {
 
     private String position;
     private String positionText;
     private String points;
     private String wins;
-    private Driver driver;
-    private List<Constructors> constructors;
+    private Driver Driver;
+    private List<Constructor> Constructors;
 }

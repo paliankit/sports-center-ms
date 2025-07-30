@@ -9,9 +9,9 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class StandingsLists {
+public class StandingsList {
 
     private String season;
     private String round;
-    private List<DriverStandings> driverStandings;
+    private List<DriverStanding> DriverStandings;
 }

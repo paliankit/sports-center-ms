@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>F1 Driver Standings</title>
+</head>
+<body>
+<h1>Driver Standings</h1>
+<table border="1">
+  <thead>
+  <tr>
+    <th>Position</th>
+    <th>Driver</th>
+    <th>Team</th>
+    <th>Points</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="driver : ${drivers}">
+    <td th:text="${driver.position}"></td>
+    <td th:text="${driver.driver.givenName + ' ' + driver.driver.familyName}"></td>
+    <td th:text="${driver.constructors[0].name}"></td>
+    <td th:text="${driver.points}"></td>
+  </tr>
+  </tbody>
+</table>
+</body>
+</html>

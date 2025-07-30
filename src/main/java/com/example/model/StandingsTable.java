@@ -13,5 +13,7 @@ public class StandingsTable {
 
     private String season;
     private String round;
-    private List<StandingsLists> standingsLists;
+    private List<StandingsList> StandingsLists;
+    //private List<ConstructorStandings> constructorStandings;
+
 }
