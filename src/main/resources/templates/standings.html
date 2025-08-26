@@ -1,45 +1,71 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-  <title>F1 Driver Standings</title>
+  <title>F1 Standings</title>
+  <style>
+    .tables-container {
+      display: flex;
+      gap: 40px; /* spacing between the tables */
+      align-items: flex-start; /* align tops of tables */
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    th, td {
+      padding: 8px;
+      border: 1px solid #000;
+    }
+    h1 {
+      font-size: 1.5em;
+    }
+  </style>
 </head>
 <body>
-<h1>Driver Standings</h1>
-<table border="1">
-  <thead>
-  <tr>
-    <th>Position</th>
-    <th>Driver</th>
-    <th>Team</th>
-    <th>Points</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr th:each="driver : ${drivers}">
-    <td th:text="${driver.position}"></td>
-    <td th:text="${driver.driver.givenName + ' ' + driver.driver.familyName}"></td>
-    <td th:text="${driver.constructors[0].name}"></td>
-    <td th:text="${driver.points}"></td>
-  </tr>
-  </tbody>
-</table>
+<div class="tables-container">
 
-<h1>Constructors Standings</h1>
-<table border="1">
-  <thead>
-  <tr>
-    <th>Position</th>
-    <th>Team</th>
-    <th>Points</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr th:each="constructor : ${constructors}">
-    <td th:text="${constructor.position}"></td>
-    <td th:text="${constructor.points}"></td>
-    <td th:text="${constructor.constructors.name}"></td>
-  </tr>
-  </tbody>
-</table>
+  <div>
+    <h1>Driver Standings</h1>
+    <table>
+      <thead>
+      <tr>
+        <th>Position</th>
+        <th>Driver</th>
+        <th>Team</th>
+        <th>Points</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr th:each="driver : ${drivers}">
+        <td th:text="${driver.position}"></td>
+        <td th:text="${driver.driver.givenName + ' ' + driver.driver.familyName}"></td>
+        <td th:text="${driver.constructors[0].name}"></td>
+        <td th:text="${driver.points}"></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div>
+    <h1>Constructors Standings</h1>
+    <table>
+      <thead>
+      <tr>
+        <th>Position</th>
+        <th>Team</th>
+        <th>Points</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr th:each="constructor : ${constructors}">
+        <td th:text="${constructor.position}"></td>
+        <td th:text="${constructor.constructors.name}"></td>
+        <td th:text="${constructor.points}"></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
 </body>
 </html>
