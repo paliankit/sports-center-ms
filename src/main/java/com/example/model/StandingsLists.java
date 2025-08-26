@@ -16,6 +16,8 @@ public class StandingsLists {
     private String round;
     @JsonProperty("DriverStandings")
     private List<DriverStandings> driverStandings;
+    @JsonProperty("ConstructorStandings")
+    private List<ConstructorStandings> constructorStandings;
 
 //    public String getSeason() {
 //        return season;

@@ -1,5 +1,6 @@
 package com.example.service;
 
+import com.example.model.ConstructorStandings;
 import com.example.model.DriverStandings;
 import com.example.model.DriverStandingResponse;
 import org.springframework.stereotype.Service;
@@ -25,15 +26,15 @@ public class F1Service {
         return Collections.emptyList();
     }
 
-//    public List<ConstructorStanding> getConstructorStandings() {
-//        String url = BASE + "/constructorstandings.json";
-//        ResponseEntity<MRData<ConstructorStanding>> resp = rest.exchange(
-//                url, org.springframework.http.HttpMethod.GET,
-//                null,
-//                new ParameterizedTypeReference<MRData<ConstructorStanding>>() {});
-//        return resp.getBody()
-//                .getStandingsTable()
-//                .getStandingsLists().get(0)
-//                .getConstructorStandings();
-//    }
+    public List<ConstructorStandings> getConstructorStandings() {
+        String url = BASE + "/constructorstandings";
+        DriverStandingResponse resp = rest.getForObject(url,DriverStandingResponse.class);
+//        String rawJson=rest.getForObject(url,String.class);
+//        System.out.println(rawJson);
+        if(resp!=null && resp.getMrdata()!=null && resp.getMrdata().getStandingsTable()!=null
+                && !resp.getMrdata().getStandingsTable().getStandingsLists().isEmpty()){
+            return resp.getMrdata().getStandingsTable().getStandingsLists().get(0).getConstructorStandings();
+        }
+        return Collections.emptyList();
+    }
 }

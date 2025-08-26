@@ -19,7 +19,7 @@ public class SportsCenterController {
     @GetMapping("/")
     public String index(Model model){
         model.addAttribute("drivers", f1Service.getDriverStandings());
-        //model.addAttribute("constructors", f1Service.getConstructorStandings());
+        model.addAttribute("constructors", f1Service.getConstructorStandings());
         return "standings";
     }
 
