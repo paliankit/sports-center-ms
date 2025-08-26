@@ -9,6 +9,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class ConstructorStandings {
 
-    private Constructor constructors;
+    private Constructors constructors;
 
 }

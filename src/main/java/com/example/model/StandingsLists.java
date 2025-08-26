@@ -8,14 +8,14 @@ import lombok.NoArgsConstructor;
 import java.util.List;
 
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
-public class StandingsTable {
+@NoArgsConstructor
+public class StandingsLists {
 
     private String season;
     private String round;
-    @JsonProperty("StandingsLists")
-    private List<StandingsLists> standingsLists;
+    @JsonProperty("DriverStandings")
+    private List<DriverStandings> driverStandings;
 
 //    public String getSeason() {
 //        return season;
@@ -33,13 +33,11 @@ public class StandingsTable {
 //        this.round = round;
 //    }
 //
-//    public List<StandingsLists> getStandingsLists() {
-//        return StandingsLists;
+//    public List<DriverStandings> getDriverStandings() {
+//        return DriverStandings;
 //    }
 //
-//    public void setStandingsLists(List<StandingsLists> standingsLists) {
-//        StandingsLists = standingsLists;
+//    public void setDriverStandings(List<DriverStandings> driverStandings) {
+//        DriverStandings = driverStandings;
 //    }
-//    //private List<ConstructorStandings> constructorStandings;
-
 }

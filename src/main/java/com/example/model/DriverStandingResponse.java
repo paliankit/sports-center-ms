@@ -1,5 +1,6 @@
 package com.example.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -8,5 +9,14 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class DriverStandingResponse {
-    private MRData MRData;
+    @JsonProperty("MRData")
+    private MRData mrdata;
+
+//    public MRData getMrdata() {
+//        return mrdata;
+//    }
+//
+//    public void setMrdata(MRData mrdata) {
+//        this.mrdata = mrdata;
+//    }
 }
