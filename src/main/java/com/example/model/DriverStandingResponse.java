@@ -12,11 +12,4 @@ public class DriverStandingResponse {
     @JsonProperty("MRData")
     private MRData mrdata;
 
-//    public MRData getMrdata() {
-//        return mrdata;
-//    }
-//
-//    public void setMrdata(MRData mrdata) {
-//        this.mrdata = mrdata;
-//    }
 }
